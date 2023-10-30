@@ -24,4 +24,5 @@ int check_cycle(listint_t *list)
 			return (1);
 		temp = temp->next;
 	}
+	return (0);
 }
