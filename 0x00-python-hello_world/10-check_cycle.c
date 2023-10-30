@@ -6,7 +6,7 @@
  * @list: pointer listint element
  *
  * Return: returns 1 if a cycle is found and
- *          zero otherwise
+ * zero otherwise
  *
  */
 
