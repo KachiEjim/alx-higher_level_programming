@@ -4,6 +4,7 @@ def remove_char_at(str, n):
     i = 0
     for c in str:
         if i == n:
+            i += 1
             continue
         copy += c
         i += 1
