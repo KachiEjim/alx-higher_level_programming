@@ -6,11 +6,9 @@ def main():
     i = 0
     names = dir(hidden_4)
     for name in sorted(names):
-        if name[i][:2] == '__':
-            i += 1
-            continue
+        if name[i][:2] != '__':
+            print(name)
         i += 1
-        print(name)
 
 
 if __name__ == "__main__":
