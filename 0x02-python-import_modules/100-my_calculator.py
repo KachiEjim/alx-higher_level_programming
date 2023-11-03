@@ -20,7 +20,7 @@ def main():
 
     func = {'-': sub, '+': add, '/': div, '*': mul}
 
-    for key, value in enumerate(func.items()):
+    for key, value in func.items():
         if key == operator:
             print("{} {} {} = {}".format(a, operator, b, value(a, b)))
             return
