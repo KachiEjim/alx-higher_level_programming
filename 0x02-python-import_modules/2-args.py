@@ -1,15 +1,19 @@
 #!/usr/bin/python3
-from sys import argv, exit
+from sys import argv
 
-if __name__ == "__main__":
+
+def main():
     l = len(argv) - 1
-
     if l == 0:
         print("0 arguments.")
-        exit(0)
-
-    s = "argument:" if l == 1 else "arguments:"
-    print("{} {}".format(l, s))
+    elif l == 1:
+        print("1 argument:")
+    else:
+        print("{0} arguments:".format(l))
 
     for i in range(1, l + 1):
-        print("{}: {}".format(l, argv[i]))
+        print("{0}: {1}".format(i, argv[i]))
+
+
+if __name__ == "__main__":
+    main()
