@@ -13,8 +13,3 @@ if __name__ == "__main__":
 
     for i in range(1, l + 1):
         print("{}: {}".format(l, argv[i]))
-
-    
-    
-
-
