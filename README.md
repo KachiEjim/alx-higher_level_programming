@@ -1,1 +1,1 @@
-This project introduces Python programming and covers various fundamental concepts of the language.
+alx-higher_level_programming PROJECT readme file 
