@@ -22,8 +22,9 @@ def main():
 
     for key, value in func.items:
         if key == operator:
-            print ("{} {} {} = {}".format(a, operator, b, value(a, b)))
-            return     
+            print("{} {} {} = {}".format(a, operator, b, value(a, b)))
+            return
+
 
 if __name__ == "__main__":
     main()
