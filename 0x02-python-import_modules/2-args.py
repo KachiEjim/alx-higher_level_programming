@@ -8,10 +8,10 @@ def main():
     elif l == 1:
         print("1 argument:")
     else:
-        print("{} arguments:".format(l))
+        print("{:d} arguments:".format(l))
 
     for i in range(1, l + 1):
-        print("{}: {}".format(i, sys.argv[i]))
+        print("{:d}: {:s}".format(i, sys.argv[i]))
 
 if __name__ == "__main__":
     main()
