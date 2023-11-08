@@ -3,7 +3,8 @@
 def weight_average(my_list=[]):
     if not my_list:
         return 0
-    func = lambda x, y: x * y
+    def func(x, y):
+        return x * y
     total = 0
     div = 0
     for item in my_list:
