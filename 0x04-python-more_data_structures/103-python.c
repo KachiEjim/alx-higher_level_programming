@@ -1,5 +1,41 @@
 #include <Python.h>
 
+void print_python_list(PyObject *p);
+void print_python_bytes(PyObject *p);
+
+
+
+/**
+ * print_python_list - Prints basic info about Python lists.
+ * 
+ * @p: A PyObject list object.
+ * 
+ */
+
+void print_python_list(PyObject *p)
+{
+        int len, memSize, i;
+        const char *type;
+        PyListObject *list = (PyListObject *)p;
+        PyVarObject *var = (PyVarObject *)p;
+
+        len = var->ob_size;
+        memSize = list->allocated;
+
+        printf("[*] Python list info\n");
+        printf("[*] Size of the Python List = %d\n", len);
+        printf("[*] Allocated = %d\n", memSize);
+
+        for (i = 0; i < len; i++)
+        {
+                type = list->ob_item[i]->ob_type->tp_name;
+                printf("Element %d: %s\n", i, type);
+                if (strcmp(type, "bytes") == 0)
+                        print_python_bytes(list->ob_item[i]);
+        }
+}
+
+
 
 
 /**
@@ -37,36 +73,5 @@ void print_python_bytes(PyObject *p)
                         printf("\n");
                 else
                         printf(" ");
-        }
-}
-
-
-/**
- * print_python_list - Prints basic info about Python lists.
- * 
- * @p: A PyObject list object.
- * 
- */
-
-void print_python_list(PyObject *p)
-{
-        int len, memSize, i;
-        const char *type;
-        PyListObject *list = (PyListObject *)p;
-        PyVarObject *var = (PyVarObject *)p;
-
-        len = var->ob_size;
-        memSize = list->allocated;
-
-        printf("[*] Python list info\n");
-        printf("[*] Size of the Python List = %d\n", len);
-        printf("[*] Allocated = %d\n", memSize);
-
-        for (i = 0; i < len; i++)
-        {
-                type = list->ob_item[i]->ob_type->tp_name;
-                printf("Element %d: %s\n", i, type);
-                if (strcmp(type, "bytes") == 0)
-                        print_python_bytes(list->ob_item[i]);
         }
 }
