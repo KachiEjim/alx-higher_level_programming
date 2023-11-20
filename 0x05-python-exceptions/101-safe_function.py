@@ -2,6 +2,7 @@
 
 from sys import stderr
 
+
 def safe_function(fct, *args):
     arg = []
     for i in range(len(args)):
