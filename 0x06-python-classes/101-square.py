@@ -54,8 +54,7 @@ class Square:
             print("")
         else:
             for i in range(0, self.__size):
-                print(((" " * self.__position[0]) + ("#" * self.__size)) )
-
+                print(((" " * self.__position[0]) + ("#" * self.__size)))
 
     def __str__(self):
         """Prints same message as my_print"""
