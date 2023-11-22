@@ -58,7 +58,5 @@ class Square:
 
     def __str__(self):
         """Prints same message as my_print"""
-        result = ""
-        for _ in range(self.__size):
-            result += ((" " * self.__position[0]) + (("#" * self.__size) + "\n"))
-        return result
+        self.my_print()
+        return ("")
