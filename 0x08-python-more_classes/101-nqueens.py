@@ -35,7 +35,7 @@ def solve(board, row, queens, solutions):
             tmp[row][c] = "Q"
             xout(tmp, row, c)
             solutions = solve(tmp, row + 1,
-                                        queens + 1, solutions)
+                              queens + 1, solutions)
     return (solutions)
 
 
