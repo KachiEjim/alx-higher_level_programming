@@ -73,7 +73,6 @@ class Rectangle:
         new = f"Rectangle({str(self.__width)}, {str(self.__height)})"
         return (new)
 
-
     def __del__(self):
         """Print a message for every deletion of a Rectangle."""
         Rectangle.number_of_instances -= 1
