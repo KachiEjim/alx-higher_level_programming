@@ -1,0 +1,78 @@
+================================================================
+HOW TO USE 3-say_my_name.py
+================================================================
+
+
+-------------------------------------------------------------------------
+This MODULE creates tests for the `say_my_name(first_name, last_name="")`
+and also defines its Usage
+--------------------------------------------------------------------------
+______________________________________________________________________________________
+USAGE:
+say_my_name(first_name, last_name="") - returns My name is <first name> <last name>
+or TypeError if either first_name or last_name is not a string
+_______________________________________________________________________________________
+
+
+
+::
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("ONYEDIKACHI", "EJIM")
+    My name is ONYEDIKACHI EJIM
+
+::
+
+    >>> say_my_name("Alx", "SE")
+    My name is Alx SE
+
+The parameter ```last_name``` is optional. If no last name is provided,
+an empty string is printed instead.
+
+::
+
+    >>> say_my_name("Onyedikachi")
+    My name is Onyedikachi 
+
+Invalid Names
+=============
+
+The parameters ``first_name`` and ``last_name``` must be strings. Otherwise,
+a TypeError is raised.
+
+::
+
+    >>> say_my_name(6, "Julien")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("Utochukwu", ["vincent", "Favor", "idris"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+::
+
+    >>> say_my_name({"LeBron": 6, "james": 23}, 7.7)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+At least one name must be provided.
+
+::
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
