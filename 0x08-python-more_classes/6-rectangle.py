@@ -69,9 +69,3 @@ class Rectangle:
         """Defines and returns a string rep of a rectangle"""
         new = f"Rectangle({str(self.__width)}, {str(self.__height)})"
         return (new)
-
-    def __del__(self):
-        """Print the message Bye rectangle...
-        when an instance of Rectangle is deleted"""
-        print("Bye rectangle...")
-        self.__class__.number_of_instances -= 1
