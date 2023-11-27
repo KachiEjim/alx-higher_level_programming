@@ -13,7 +13,6 @@ class Rectangle:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
-
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -61,7 +60,6 @@ class Rectangle:
         rectangle_str = ""
         for _ in range(self.__height):
             rectangle_str += "#" * self.__width + "\n"
-
         return rectangle_str.rstrip("\n")
 
     def __repr__(self):
