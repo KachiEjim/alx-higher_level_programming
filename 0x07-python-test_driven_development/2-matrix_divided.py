@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """Defines a function that divides all ints and floats in a matrix"""
 
+
 def matrix_divided(matrix, div):
 
     """Function divides all elements in matrix with div
-    
+
     args:
         matrix (list of list): matrix containing elements to be divided
         div (int or float): divisor
@@ -24,8 +25,9 @@ def matrix_divided(matrix, div):
     if (not isinstance(matrix, list) or matrix == [] or
         not all(isinstance(x, list) for x in matrix) or
         not all(isinstance(elem, (int, float)) for elem
-        in [x for temp in matrix for x in temp])):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                in [x for temp in matrix for x in temp])):
+        raise TypeError("matrix must be a matrix (list of lists) "
+                        "of integers/floats")
     row1 = len(matrix[0])
     for row in matrix:
         if row1 != len(row):
