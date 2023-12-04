@@ -18,7 +18,14 @@ class BaseGeometry:
         args:
             name (str): name passed
             value (int): interger passed
+
+        Raises:
+            if value is not an integer: TypeError exception,
+            with the message <name> must be an integer
+            if value is less or equal to 0: raise a ValueError
+            exception with the message <name> must be greater than 0
         """
+
         if type(value) != int:
             raise TypeError(f"{name} must be an integer")
         if value <= 0:
