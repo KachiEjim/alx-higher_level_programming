@@ -73,8 +73,7 @@ Test suite 3:
 
 Test suites 4:
 
-::
-
+:: 
 
 
     >>> bg.integer_validator("data", 1, 20)
@@ -94,4 +93,4 @@ Test suites 4:
 
     >>> bg.integer_validator("bool", False)
     Traceback (most recent call last):
-    ValueError: bool must be greater than 0
+    TypeError: bool must be an integer
