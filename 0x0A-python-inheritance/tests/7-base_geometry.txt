@@ -90,3 +90,8 @@ Test suites 4:
     >>> bg.integer_validator("bool", false)
     Traceback (most recent call last):
     NameError: name 'false' is not defined
+
+
+    >>> bg.integer_validator("bool", False)
+    Traceback (most recent call last):
+    ValueError: bool must be greater than 0
