@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""A class that validates an input"""
 
 
 class BaseGeometry:
