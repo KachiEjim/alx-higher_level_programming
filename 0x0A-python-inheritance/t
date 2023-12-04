@@ -1,0 +1,16 @@
+class MyClass:
+    pass
+
+obj = MyClass()
+obj_class_name = type(obj).__name__
+print(f"(obj_class_name = type(obj).__name__) {type(obj)}")
+print(f"type(MyClass) {type(MyClass)}")
+
+obj_class_name = obj.__class__.__name__
+print(f"(obj_class_name = obj.__class__.__name__) {obj_class_name}")
+print()
+
+
+objClass = obj.__class__
+print(f"objClass = obj.__class__  {objClass}")
+print(type(obj))
