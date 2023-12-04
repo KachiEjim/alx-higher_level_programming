@@ -1,16 +1,16 @@
-class MyClass:
+#!/usr/bin/python3
+add_attribute = __import__('101-add_attribute').add_attribute
+
+class MyClass():
     pass
 
-obj = MyClass()
-obj_class_name = type(obj).__name__
-print(f"(obj_class_name = type(obj).__name__) {type(obj)}")
-print(f"type(MyClass) {type(MyClass)}")
+mc = MyClass()
+add_attribute(mc, "name", "John")
+print(mc.name)
 
-obj_class_name = obj.__class__.__name__
-print(f"(obj_class_name = obj.__class__.__name__) {obj_class_name}")
-print()
-
-
-objClass = obj.__class__
-print(f"objClass = obj.__class__  {objClass}")
-print(type(obj))
+try:
+    a = "My String"
+    add_attribute(a, "name", "Bob")
+    print(a.name)
+except Exception as e:
+    print("[{}] {}".format(e.__class__.__name__, e))
