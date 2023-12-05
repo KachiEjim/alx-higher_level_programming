@@ -54,7 +54,6 @@ Test suites 2:
     Traceback (most recent call last):
     TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-
 Test suite 3:
 
 ::
