@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Function that appends a str to the end of a file"""
 
+
 def append_write(filename="", text=""):
-    """Opens a file in append mode, append to it and returns the value appended 
+    """Opens a file in append mode,
+    append to it and returns the value appended
 
     args:
         filename (File): file to be created or appended to

@@ -3,7 +3,7 @@
 
 
 def write_file(filename="", text=""):
-    """Opens a file in write mode, write to it and returns the value written 
+    """Opens a file in write mode, write to it and returns the value written
 
     args:
         filename (File): file to be created or written to

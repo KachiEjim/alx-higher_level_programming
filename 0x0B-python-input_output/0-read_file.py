@@ -4,7 +4,7 @@
 
 def read_file(filename=""):
     """Read from a file and print it to stdout
-    
+
     args:
         filename (File): File containing value to be printed
     """
