@@ -25,15 +25,21 @@ def computes_metrics():
             parts = line.split()
 
             try:
-                file_size_str = parts[-1]
-                status_code_str = parts[-2]
+                try:
+                    file_size_str = parts[-1]
+                except IndexError:
+                    pass
+                try:
+                    status_code_str = parts[-2]
+                except IndexError:
+                    pass
                 file_size = int(file_size_str)
                 status_code = int(status_code_str)
                 total_file_size += file_size
 
                 if status_code in status_code_counts:
                     status_code_counts[status_code] += 1
-            except (ValueError, KeyError, IndexError):
+            except (ValueError):
                 pass
 
             if line_count % 10 == 0:
