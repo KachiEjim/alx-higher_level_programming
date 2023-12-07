@@ -53,6 +53,7 @@ def computes_metrics():
         for code, count in sorted(status_code_counts.items()):
             if count > 0:
                 print(f"{code}: {count}")
+        raise
 
 
 if __name__ == "__main__":
