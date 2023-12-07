@@ -24,7 +24,6 @@ def computes_metrics():
             line_count += 1
             parts = line.split()
 
-
             try:
                 file_size_str = parts[-1]
                 status_code_str = parts[-2]
@@ -48,6 +47,7 @@ def computes_metrics():
         for code, count in sorted(status_code_counts.items()):
             if count > 0:
                 print(f"{code}: {count}")
+
 
 if __name__ == "__main__":
     computes_metrics()
