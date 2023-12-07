@@ -24,17 +24,18 @@ def computes_metrics():
             line_count += 1
             parts = line.split()
 
-            if len(parts) >= 7:
+
+            try:
                 file_size_str = parts[-1]
                 status_code_str = parts[-2]
-                try:
-                    file_size = int(file_size_str)
-                    status_code = int(status_code_str)
-                    total_file_size += file_size
-                    if status_code in status_code_counts:
-                        status_code_counts[status_code] += 1
-                except ValueError:
-                    pass
+                file_size = int(file_size_str)
+                status_code = int(status_code_str)
+                total_file_size += file_size
+
+                if status_code in status_code_counts:
+                    status_code_counts[status_code] += 1
+            except (ValueError, KeyError, IndexError):
+                pass
 
             if line_count % 10 == 0:
                 print(f"File size: {total_file_size}")
@@ -47,7 +48,6 @@ def computes_metrics():
         for code, count in sorted(status_code_counts.items()):
             if count > 0:
                 print(f"{code}: {count}")
-
 
 if __name__ == "__main__":
     computes_metrics()
