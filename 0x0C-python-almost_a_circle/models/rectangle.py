@@ -9,9 +9,10 @@ class Rectangle(Base):
     args:
         Base (class): A definition of the class base.
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initalizes an instance of the class
-        
+
         args:
             width (int): The width of the rectangle
             height (int): The height of the rectangle
@@ -97,7 +98,7 @@ class Rectangle(Base):
         """Prints the Rectangle to stdout"""
         for _ in range(self.y):
             print()
-        [print(" " *self.x + "#" * self.width) for _ in range(self.height)]
+        [print(" " * self.x + "#" * self.width) for _ in range(self.height)]
 
     def __str__(self):
         result = f"[Rectangle] ({self.id}) {self.x}/{self.y} "
@@ -131,7 +132,6 @@ class Rectangle(Base):
                         self.x = value
                     elif key == "y":
                         self.y = value
-
 
     def to_dictionary(self):
         """Return the dictionary representation of the rectangle."""
