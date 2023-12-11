@@ -33,16 +33,18 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file"""
-        if list_objs is None:
-            list_objs = []
+        """Write the JSON serialization of a list of objects to a file.
 
-        filename = f"{type(list_objs[0]).__name__}.json"
-
-        with open(filename, 'w') as file:
-            to_dict = [item.to_dictionary() for item in list_objs]
-            json_string = Base.to_json_string(to_dict)
-            file.write(json_string)
+        Args:
+            list_objs (list): A list of inherited Base instances.
+        """
+        filename = cls.__name__ + ".json"
+        with open(filename, "w") as jsonfile:
+            if list_objs is None:
+                jsonfile.write("[]")
+            else:
+                list_dicts = [o.to_dictionary() for o in list_objs]
+                jsonfile.write(Base.to_json_string(list_dicts))
 
     @staticmethod
     def from_json_string(json_string):
@@ -123,7 +125,7 @@ class Base:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
                     instance_args = {key: int(value)
-                                     for key, value in row.items()}
+                        for key, value in row.items()}
                     instance = cls.create(**instance_args)
                     instances.append(instance)
 
