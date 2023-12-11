@@ -124,8 +124,7 @@ class Base:
             with open(filename, "r", newline="") as csvfile:
                 reader = csv.DictReader(csvfile)
                 for row in reader:
-                    instance_args = {key: int(value)
-                        for key, value in row.items()}
+                    instance_args = {k: int(v) for k, v in row.items()}
                     instance = cls.create(**instance_args)
                     instances.append(instance)
 
