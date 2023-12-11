@@ -19,9 +19,9 @@ class Square(Rectangle):
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Returns str rep of the square."""
-        value = f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
-        return value
+        """Return the print() and str() representation of a Square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
+                                                 self.width)
 
     @property
     def size(self):
@@ -35,6 +35,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Updates the value of the square"""
         if args and len(args) != 0:
             if len(args) >= 1:
                 self.id = args[0]
