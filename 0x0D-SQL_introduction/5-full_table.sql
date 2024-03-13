@@ -1,2 +1,2 @@
--- SQL script to print the full description of the SHOW '
-SHOW CREATE TABLE hbtn_0c_0.first_table
+-- SQL script to print the full description of the table first table from database
+SHOW CREATE TABLE `first_table`;
