@@ -1,5 +1,5 @@
--- a script that creates the database hbtn_0d_usa and the table cities
+-- a script that lists all the cities of California that can be found in the database hbtn_0d_usa.
 SELECT id, name
-FROM city
-WHERE state_id = (SELECT id FROM `state` WHERE `name` = 'California')
+FROM cities
+WHERE state_id = (SELECT id FROM states WHERE name = 'California')
 ORDER BY id ASC;
