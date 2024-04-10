@@ -1,3 +1,4 @@
+#!/usr/bin/node
 
 let argumentCount = 0;
 
