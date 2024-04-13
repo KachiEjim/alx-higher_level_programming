@@ -27,7 +27,7 @@ def listStates(username, password, database):
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states ORDER BY state_id ASC")
+    cursor.execute("SELECT * FROM states ORDER BY id ASC")
 
     rows = cursor.fetchall()
 
