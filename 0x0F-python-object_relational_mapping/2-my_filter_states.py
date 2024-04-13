@@ -38,7 +38,7 @@ def listStates(username, password, database, state_name):
     db.close()
 
 if __name__ == "__main__":
-    if len(argv == 5):
+    if len(argv) == 5:
         username = argv[1]
         password = argv[2]
         database = argv[3]
