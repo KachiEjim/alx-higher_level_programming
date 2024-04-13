@@ -39,6 +39,7 @@ def filterCities(username, password, database, state_name):
     result =", ".join([row[0] for row in rows])
 
     print(result)
+    print(rows)
 
     cursor.close()
     db.close()
