@@ -27,8 +27,8 @@ def listStates(username, password, database, state_name):
 
     cursor = db.cursor()
 
-    query = "SELECT * FROM states WHERE name = '{}' \
-    ORDER BY id".format(state_name)
+    query = "SELECT * FROM states WHERE name LIKE BINARY '{}' \
+    ORDER BY id".format(state_name.strip("'\""))
     cursor.execute(query)
     rows = cursor.fetchall()
 
