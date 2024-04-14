@@ -9,13 +9,13 @@ import MySQLdb
 from sys import argv
 
 
-
 def listStates(username, password, database, state_name):
     """List all states from the hbtn_0e_0_usa database.
     Args:
         username (str): The MySQL username.
         password (str): The MySQL password.
         database (str): The name of the MySQL database.
+        state_name (str): The name of the state to be displayed
 
     Returns: None
         """
@@ -36,6 +36,7 @@ def listStates(username, password, database, state_name):
 
     cursor.close()
     db.close()
+
 
 if __name__ == "__main__":
     if len(argv) == 5:

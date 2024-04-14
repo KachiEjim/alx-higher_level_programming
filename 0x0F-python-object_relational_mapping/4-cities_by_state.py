@@ -41,6 +41,7 @@ def listCities(username, password, database):
     cursor.close()
     db.close()
 
+
 if __name__ == "__main__":
     if len(argv) == 4:
         username = argv[1]
