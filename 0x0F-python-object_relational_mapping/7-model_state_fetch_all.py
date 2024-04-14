@@ -15,7 +15,7 @@ from model_state import Base, State
 def fetchAll(username, password, dbname):
     """a class that lists all State objects from the
     database hbtn_0e_6_usa
-    
+
     Attributes:
     username (str): Username of the user
     password (str): user password
