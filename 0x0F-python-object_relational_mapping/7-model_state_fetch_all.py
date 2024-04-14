@@ -1,54 +1,40 @@
 #!/usr/bin/python3
 """
-A script that lists all cities of a given state from the database hbtn_0e_4_usa
+Lists all State objects from the database hbtn_0e_6_usa.
+Usage: ./7-model_state_fetch_all.py <mysql username> /
+                                    <mysql password> /
+                                    <database name>
 """
 
-import MySQLdb
 from sys import argv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
 
 
-def filterCities(username, password, database, state_name):
+def fetchAll(username, password, dbname):
+    """a class that lists all State objects from the
+    database hbtn_0e_6_usa
+    
+    Attributes:
+    username (str): Username of the user
+    password (str): user password
+    dbname (str): Database to be assessed
     """
-    List all cities of a given state from the hbtn_0e_4_usa database.
+    engine = create_engine(
+        "mysql+mysqldb://{}:{}@localhost/{}"
+        .format(username, password, dbname),
+        pool_pre_ping=True
+    )
+    session_maker = sessionmaker(bind=engine)
+    session = session_maker()
+    states = session.query(State).order_by(State.id)
 
-    Args:
-        username (str): The MySQL username.
-        password (str): The MySQL password.
-        database (str): The name of the MySQL database.
-        state_name (str): The name of the state to filter cities.
-
-    Returns:
-        None
-    """
-    db = MySQLdb.connect(host="localhost",
-                         port=3306,
-                         user=username,
-                         passwd=password,
-                         db=database)
-
-    cursor = db.cursor()
-
-    query = """
-        SELECT cities.name
-        FROM cities states
-        ORDER BY cities.id
-    """
-    cursor.execute(query, (state_name,))
-    rows = cursor.fetchall()
-
-    result =", ".join([row[0] for row in rows])
-
-    print(result)
-    print(rows)
-
-    cursor.close()
-    db.close()
+    for state in states:
+        print("{}: {}".format(state.id, state.name))
 
 
 if __name__ == "__main__":
-    if len(argv) == 5:
-        username = argv[1]
-        password = argv[2]
-        database = argv[3]
-        state_name = argv[4]
-        filterCities(username, password, database, state_name)
+    username = argv[1]
+    password = argv[2]
+    dbname = argv[3]
