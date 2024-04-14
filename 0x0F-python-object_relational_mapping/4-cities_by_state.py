@@ -1,8 +1,11 @@
 #!/usr/bin/python3
 
 """A script to list all cities from the hbtn_0e_4_usa database.
-Usage:
-    python list_cities.py <username> <password> <database>
+
+Usage: ./2-my_filter_states.py <mysql username>
+                                    <mysql password>
+                                    <database name>
+                                    <state name searched>
 """
 
 import MySQLdb
@@ -30,7 +33,7 @@ def listCities(username, password, database):
     SELECT cities.id, cities.name, states.name
     FROM cities
     INNER JOIN states ON cities.state_id = states.id
-    ORDER BY cities.id
+    ORDER BY cities.id ASC
     """
     cursor.execute(query)
     rows = cursor.fetchall()
