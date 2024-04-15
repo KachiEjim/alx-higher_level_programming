@@ -31,6 +31,7 @@ def fetchWithA(username, password, dbname):
         if "a" in state.name:
             print("{}: {}".format(state.id, state.name))
 
+
 if __name__ == "__main__":
     username = argv[1]
     password = argv[2]
