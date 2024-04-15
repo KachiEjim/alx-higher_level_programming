@@ -8,9 +8,12 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
-if __name__ == "__main__":
+
+def addObj(uname, pword, db):
+    """a class that adds the State object
+    “Louisiana” to the database hbtn_0e_6_usa"""
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
-                           .format(argv[1], argv[2], argv[3]),
+                           .format(uname, pword, db),
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
     session_maker = sessionmaker(bind=engine)
@@ -20,3 +23,10 @@ if __name__ == "__main__":
     session.add(obj)
     session.commit()
     print(obj.id)
+
+
+if __name__ == "__main__":
+    uname = argv[1]
+    pword = argv[2]
+    db = argv[3]
+    addObj(uname, pword, db)
