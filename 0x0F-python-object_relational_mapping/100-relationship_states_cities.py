@@ -4,16 +4,16 @@ hbtn_0e_100_usa: (100-relationship_states_cities.py)"""
 
 from sys import argv as a
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlachemy.orm import sessionmaker
 from relationship_city import City
 from relationship_state import Base, State
 
 if __name__ == "__main__":
-    e = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
                            .format(a[1], a[2], a[3]),
                            pool_pre_ping=True)
-    Base.metadata.create_all(e)
-    Session = sessionmaker(bind=e)
+    Base.metadata.create_all(engine)
+    Session = sessionmaker(bind=engine)
     session = Session()
 
     session.add(City(name="San Francisco", state=State(name="California")))
