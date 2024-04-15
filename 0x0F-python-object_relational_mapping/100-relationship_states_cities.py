@@ -5,7 +5,7 @@ hbtn_0e_100_usa: (100-relationship_states_cities.py)"""
 
 from sys import argv as a
 from sqlalchemy import create_engine
-from sqlachemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker
 from relationship_city import City
 from relationship_state import Base, State
 
