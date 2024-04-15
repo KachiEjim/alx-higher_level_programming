@@ -21,7 +21,7 @@ def deleteAll(uname, pword, db):
 
     states = session.query(State).all()
     for state in states:
-        if 'a' in state:
+        if 'a' in state.name:
             session.delete(state)
     session.commit()
 
