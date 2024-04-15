@@ -17,4 +17,4 @@ if __name__ == "__main__":
     cities = session.query(City).order_by(City.id)
 
     for city in cities:
-        print("{city.id}: {city.name} -> {city.state.name}")
+        print(f"{city.id}: {city.name} -> {city.state.name}")
