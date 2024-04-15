@@ -19,11 +19,9 @@ def deleteAll(uname, pword, db):
     session_maker = sessionmaker(bind=engine)
     session = session_maker()
 
-    states = session.query(State).all()
-    states_copy = states[:]
-    for state in states_copy:
-        if 'a' in state.name:
-            session.delete(state)
+    states = session.query(State).filter(State.name.like('%a%')).all()
+    for state in states:
+        session.delete(state)
     session.commit()
 
 
