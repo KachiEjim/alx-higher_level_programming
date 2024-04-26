@@ -1,3 +1,3 @@
 #!/bin/bash
 # Display response body
-curl -s "$1" -H "X-school-User-Id: 98"
+curl -s "$1" -X GET -H "X-school-User-Id: 98"
