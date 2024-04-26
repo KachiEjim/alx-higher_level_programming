@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Retrieve header with requests module
+"""Retrieve header 'X-Request-Id'
+with requests module
 """
 
 import requests
