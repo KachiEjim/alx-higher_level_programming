@@ -13,5 +13,5 @@ if __name__ == '__main__':
         result = requests.get(url)
         result.raise_for_status()
         print(result.text)
-    except:
+    except Exception:
         print('Error code: {}'.format(result.status_code))
