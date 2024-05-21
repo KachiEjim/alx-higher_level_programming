@@ -1,13 +1,11 @@
+#!/usr/bin/node
+
 const fs = require('fs');
-const file = 'output.txt';
-const data = 'Hello, World!';
+const file = process.argv[2];
 
-fs.writeFile(file, data, 'utf8', (err) => {
-  if (err) {
-    console.log('Error:', err);
-  } else {
-    console.log('File written successfully');
-  }
-});
-
-console.log('This line runs immediately after fs.writeFile is called, not after it completes.');
+try {
+  fs.writeFileSync(file, data, 'utf8');
+  console.log('File written successfully');
+} catch (err) {
+  console.log(err);
+}
