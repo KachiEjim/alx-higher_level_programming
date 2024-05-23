@@ -10,8 +10,8 @@ if __name__ == '__main__':
     url = 'https://api.github.com/user'
     user = argv[1]
     token = argv[2]
-    header = {f'Authorization': 'token {token}'}
+    headers = {'Authorization': f'Bearer {token}'}
 
-    req = requests.get(url, headers=header)
-
-    print(req.json().get('id'))
+    r = requests.get(url, headers=headers)
+    print(r.text)
+    print(r.json().get('id'))
